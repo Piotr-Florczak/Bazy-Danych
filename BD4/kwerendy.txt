@@ -1,0 +1,24 @@
+SELECT DISTINCT adresy.adres_miejscowosc, klienci.klient_imie, klienci.klient_data FROM adresy JOIN klienci ON adresy.adres_klient_id = klienci.klient_id
+
+SELECT DISTINCT adresy.adres_miejscowosc FROM adresy JOIN klienci ON adresy.adres_klient_id = klienci.klient_id WHERE adresy.adres_typ = 1
+
+SELECT DISTINCT adresy.adres_miejscowosc FROM adresy LEFT JOIN klienci ON  adresy.adres_klient_id = klienci.klient_id WHERE adresy.adres_klient_id NOT IN (SELECT klient_id FROM klienci);
+
+SELECT DISTINCT klienci.klient_imie FROM adresy RIGHT JOIN klienci ON adresy.adres_klient_id = klienci.klient_id  WHERE klienci.klient_id NOT IN (SELECT adres_klient_id FROM adresy);
+
+SELECT klienci.klient_id, klienci.klient_imie
+FROM klienci
+JOIN adresy ON klienci.klient_id = adresy.adres_klient_id
+GROUP BY klienci.klient_id, klienci.klient_imie
+HAVING COUNT(adresy.adres_id) > 1;
+
+SELECT klienci.klient_id, klienci.klient_imie
+FROM klienci
+JOIN adresy ON klienci.klient_id = adresy.adres_klient_id
+GROUP BY klienci.klient_id, klienci.klient_imie
+HAVING COUNT(adresy.adres_id) = 1;
+
+SELECT SUBSTR(klienci.klient_imie, 1, 1), COUNT(adresy.adres_id)
+FROM klienci
+JOIN adresy ON klienci.klient_id = adresy.adres_klient_id
+GROUP BY SUBSTR(klienci.klient_imie, 1, 1);

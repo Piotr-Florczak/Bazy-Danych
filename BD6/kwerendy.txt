@@ -1,0 +1,47 @@
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('193','5','625','6','3');
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('194','5','621','6','3');
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('195','5','622','6','3');
+
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('196','1','666','6','3');
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('197','1','668','6','3');
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('198','1','656','6','3');
+
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('199','3','656','6','3');
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('200','3','1336','6','3');
+INSERT INTO `pokoje`(`id_pokoju`, `id_hotel`, `nr_pokoju`, `pietro`, `ludzie`) VALUES ('201','3','1366','6','3');
+
+SELECT COUNT(*)
+FROM klienci
+WHERE id_kraju = (SELECT id_kraju FROM kraje WHERE nazwa_kraju = 'Polska');
+
+SELECT COUNT(*)
+FROM hotele
+JOIN kraje ON hotele.id_kraj = kraje.id_kraju
+WHERE kraje.nazwa_kraju = 'Polska';
+
+SELECT klienci.nazwisko, klienci.imie
+FROM rezerwacje
+JOIN klienci ON rezerwacje.id_klient = klienci.id_klient
+WHERE rezerwacje.id_parking IS NOT NULL AND rezerwacje.zrealizowane > 0
+
+SELECT COUNT(*)
+FROM rezerwacje
+JOIN klienci ON rezerwacje.id_klient = klienci.id_klient
+WHERE rezerwacje.id_parking IS NOT NULL AND rezerwacje.zrealizowane > 0
+
+SELECT hotele.nazwa, COUNT(DISTINCT pokoje.id_pokoju) AS liczba_pokoi
+FROM hotele
+JOIN pokoje ON hotele.id_hotel = pokoje.id_hotel
+GROUP BY hotele.nazwa;
+
+SELECT hotele.nazwa, miasta.kod_miasta
+FROM hotele
+JOIN miasta ON hotele.id_miasto = miasta.id_miasta
+WHERE miasta.kod_miasta IS NOT NULL;
+
+SELECT hotele.nazwa, COUNT(pokoje.id_pokoju) AS liczba_pokoi
+FROM hotele
+JOIN pokoje ON hotele.id_hotel = pokoje.id_hotel
+GROUP BY hotele.nazwa
+ORDER BY liczba_pokoi DESC
+LIMIT 3;

@@ -1,0 +1,29 @@
+SELECT COUNT(*) FROM panstwa JOIN kontynenty ON panstwa.id_kontynentu = kontynenty.id_kontynent;
+
+SELECT COUNT(*) FROM miasta JOIN panstwa ON miasta.id_panstwa = panstwa.id_panstwa;
+
+SELECT COUNT(nazwa_miasta) FROM miasta;
+
+SELECT nazwa_miasta, obszar
+FROM miasta
+WHERE obszar = (SELECT MAX(obszar) FROM miasta);
+
+SELECT nazwa_miasta, ludnosc
+FROM miasta
+WHERE ludnosc = (SELECT MAX(ludnosc) FROM miasta);
+
+SELECT AVG(ludnosc) FROM miasta;
+
+SELECT AVG(miasta.ludnosc) FROM miasta JOIN panstwa on miasta.id_panstwa = panstwa.id_panstwa WHERE panstwa.nazwa_panstwa = 'Polska';
+
+SELECT AVG(ludnosc) FROM miasta JOIN panstwa on miasta.id_panstwa = panstwa.id_panstwa JOIN kontynenty on panstwa.id_kontynentu = kontynenty.id_kontynent WHERE kontynenty.nazwa_kontynent = 'Azja';
+
+SELECT SUM(ludnosc) FROM miasta JOIN panstwa on miasta.id_panstwa = panstwa.id_panstwa JOIN kontynenty on panstwa.id_kontynentu = kontynenty.id_kontynent WHERE kontynenty.nazwa_kontynent = 'Europa';
+
+SELECT SUM(ludnosc) FROM miasta JOIN panstwa on miasta.id_panstwa = panstwa.id_panstwa JOIN kontynenty on panstwa.id_kontynentu = kontynenty.id_kontynent WHERE kontynenty.nazwa_kontynent = 'Azja' or kontynenty.nazwa_kontynent = 'Afryka';
+
+SELECT kontynenty.nazwa_kontynent,COUNT(miasta.nazwa_miasta) FROM miasta JOIN panstwa ON miasta.id_miasta = panstwa.id_panstwa JOIN kontynenty ON panstwa.id_kontynentu = kontynenty.id_kontynent GROUP BY kontynenty.id_kontynent;
+
+SELECT nazwa_miasta, ludnosc
+FROM miasta
+WHERE ludnosc > (SELECT AVG(ludnosc) FROM miasta);

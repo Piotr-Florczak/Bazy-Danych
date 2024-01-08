@@ -1,0 +1,9 @@
+CREATE USER 'admin_2023'@'localhost' IDENTIFIED BY 'admin123'
+
+
+GRANT ALL PRIVILEGES ON  `2023\_10`.* TO 'admin_2023'@'localhost' WITH GRANT OPTION; 
+
+
+SELECT miejsce_urodzenia FROM `miejsca` JOIN osoby ON miejsca.id_miejsce_urodzenia=osoby.id_miejsce_urodzenia;
+
+SELECT * FROM `osoby` WHERE osoby.id_miejsce_urodzenia=1;

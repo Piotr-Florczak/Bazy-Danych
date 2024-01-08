@@ -1,0 +1,13 @@
+1. Pokazać:
+a) miasto (nazwa; tylko jeżeli ma poprawne id_panstwa)
+b) państwo (nazwa; tylko jeżeli ma poprawne id_kontynent)
+c) kontynent (nazwa)
+2. Pokaż zestawienia (LEFT/RIGHT JOIN):
+a) miasto - państwo
+b) miasto - państwo - kontynent
+c) miasto - kontynent
+d) miasto, ludność - państwo
+3. Pokazać miasto z największa i najmniejszą liczbą ludności (wykorzystaj LIMIT i ORDER BY) 
+4. Ile osób mieszka we wszystkich miastach wymienionych w tabeli miasta?
+5. Ile osób mieszka w wymienionych miastach w Polsce?
+

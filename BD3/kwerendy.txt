@@ -1,0 +1,41 @@
+1.
+a) SELECT miasta.miasto FROM miasta JOIN panstwa ON miasta.id_panstwa=panstwa.id_panstwo;
+b) SELECT panstwa.panstwo FROM panstwa JOIN kontynenty ON
+c) panstwa.id_panstwo=kontynenty.id_kontynent;
+d) SELECT kontynent FROM kontynenty
+
+2.
+
+a) SELECT miasta.miasto,panstwa.panstwo FROM miasta LEFT JOIN panstwa ON miasta.id_panstwa = panstwa.id_panstwo
+
+b) SELECT miasta.miasto,panstwa.panstwo, kontynenty.kontynent FROM miasta LEFT JOIN panstwa ON miasta.id_panstwa = panstwa.id_panstwo LEFT JOIN kontynenty ON panstwa.id_kontynent = kontynenty.id_kontynent
+
+c) SELECT miasta.miasto,kontynenty.kontynent FROM miasta LEFT JOIN panstwa ON miasta.id_panstwa = panstwa.id_panstwo LEFT JOIN kontynenty ON panstwa.id_kontynent = kontynenty.id_kontynent
+
+d) SELECT miasta.miasto,miasta.ludnosc,kontynenty.kontynent FROM miasta LEFT JOIN panstwa ON miasta.id_panstwa = panstwa.id_panstwo LEFT JOIN kontynenty ON panstwa.id_kontynent = kontynenty.id_kontynent
+
+3.
+
+SELECT * FROM `miasta`
+ORDER BY `ludnosc` ASC
+LIMIT 1;
+
+SELECT miasto, ludnosc
+FROM miasta
+ORDER BY ludnosc DESC
+LIMIT 1;
+
+4. SELECT SUM(ludnosc) FROM miasta;
+
+5. SELECT sum(ludnosc) FROM miasta JOIN panstwa ON miasta.id_panstwa=panstwa.id_panstwo WHERE panstwa.panstwo="Polska"
+
+na 6
+
+SELECT miasto, ludnosc
+FROM miasta
+WHERE ludnosc = (SELECT MIN(ludnosc) FROM miasta);
+
+SELECT miasto, ludnosc
+FROM miasta
+WHERE ludnosc = (SELECT MAX(ludnosc) FROM miasta);
+

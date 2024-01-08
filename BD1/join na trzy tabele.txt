@@ -1,0 +1,1 @@
+SELECT typ_ubrania.ubranie , marka.marka, sklep.cena FROM typ_ubrania JOIN marka ON typ_ubrania.id_marka=marka.id JOIN sklep ON sklep.id_typ_ubrania=typ_ubrania.id;

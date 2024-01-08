@@ -1,0 +1,12 @@
+Przy pomocy PHP stworzyć stronę z przyciskami, która:
+1. Stworzy/usunie bazę 4B_06_11_2023
+2. Stworzy/usunie tabelę o nazwie klasy z polami:
+	a) id_klasa int(6) NOT NULL
+	b) klasa varchar(20) NOT NULL
+3. Wstawi/opróżni tabelę klasy klasami z naszej szkoły
+4. stworzy usunie tablę uczniowie z polami:
+	a) id_uczen int(11) NOT NULL
+	b) nazwisko varchar(30) NOT NULL
+	c) imie varchar(30) NOT NULL
+	d) id_klasa int(6) NOT NULL
+5. Wstawi/opróżni tabelę uczniowie uczniami (5)

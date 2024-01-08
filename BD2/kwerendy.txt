@@ -1,0 +1,16 @@
+SELECT COUNT(DISTINCT AutorID) AS LiczbaAutorow
+FROM ksiazki;
+
+SELECT COUNT(DISTINCT IDKsiazki) AS LiczbaTytulow
+FROM ksiazki;
+
+SELECT k.Tytul, COUNT(e.KsiazkaID) AS LiczbaSztuk
+FROM ksiazki k
+JOIN egzemplarze e ON k.IDKsiazki = e.KsiazkaID
+GROUP BY k.Tytul;
+
+
+SELECT COUNT(e.KsiazkaID) AS LiczbaKsiazekAdamaMickiewicza
+FROM ksiazki k
+JOIN egzemplarze e ON k.IDKsiazki = e.KsiazkaID
+WHERE k.AutorID = (SELECT IDAutor FROM autorzy WHERE Imie = 'Adam' AND Nazwisko = 'Mickiewicz');
