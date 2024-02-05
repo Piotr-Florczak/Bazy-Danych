@@ -1,0 +1,44 @@
+id;panstwo;powierzchnia;ludnosc;domena
+1;albania;28748;3039000;al
+2;andora;468;85600;ad
+3;austria;83879;8856000;at
+4;belgia;30528;11779000;be
+5;białoruś;207600;9340000;by
+6;bośnia i hercegowina;51197;3507000;ba
+7;bułgaria;110910;7061000;bg
+8;chorwacja;56594;4149000;hr
+9;czarnogóra;13812;623000;me
+10;czechy;78879;10500000;cz
+11;dania;43098;5823000;dk
+12;estonia;45339;1328000;ee
+13;finlandia;338145;5531000;fi
+14;francja;643801;64898000;fr
+15;grecja;131957;10432000;gr
+16;hiszpania;505944;47327000;es
+17;holandia;41526;17476000;nl
+18;irlandia;70273;5225000;ie
+19;islandia;103125;369000;is
+20;kosowo;10887;1920000;null
+21;lichtenstein;160;39711;li
+22;litwa;65300;2802000;lt
+23;luxemburg;2586;634700;lu
+24;łotwa;64573;1950000;lv
+25;macedonia północna;25713;2076000;mk
+26;mołdawia;33843;3553000;md
+27;niemcy;357578;83500000;de
+28;norwegia;385207;5425000;no
+29;polska;312696;37500000;pl
+30;portugalia;92391;10345000;pt
+31;rosja;4268850;116990000;ru
+32;rumunia;238391;21230000;ro
+33;san marino;61;33600;sm
+34;serbia;88361;6974000;rs
+35;słowacja;49035;5446000;sk
+36;słowenia;20273;2107000;si
+37;szwajcaria;41285;8670000;ch
+38;szwecja;450295;10328000;se
+39;ukraina;603700;41167000;ua
+40;watykan;0.44;825;va
+41;węgry;93030;9728000;hu
+42;wielka brytania;244820;67081000;uk
+43;włochy;302072;60484000;it

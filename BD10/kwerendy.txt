@@ -1,0 +1,21 @@
+SELECT ludnosc , powierzchnia, panstwo,stolica FROM panstwa_txt JOIN stolice_txt on panstwa_txt.id = stolice_txt.id_panstwa WHERE panstwo = 'polska'
+
+SELECT COUNT(panstwo) FROM panstwa_txt WHERE panstwo LIKE 'p%'
+
+SELECT SUM(powierzchnia) FROM panstwa_txt
+
+SELECT SUM(powierzchnia) FROM panstwa_txt WHERE NOT panstwo = 'rosja'
+
+SELECT SUM(ludnosc) FROM panstwa_txt
+
+SELECT AVG(powierzchnia) FROM panstwa_txt
+
+SELECT AVG(ludnosc) FROM panstwa_txt
+
+SELECT panstwo , (ludnosc/powierzchnia)*100 AS Zestawienie FROM panstwa_txt
+
+SELECT panstwo , powierzchnia , ludnosc FROM panstwa_txt WHERE powierzchnia = (SELECT MAX(powierzchnia) FROM panstwa_txt)
+
+SELECT panstwo , powierzchnia , ludnosc FROM panstwa_txt WHERE powierzchnia = (SELECT MIN(powierzchnia) FROM panstwa_txt)
+
+SELECT 'mniejszych', COUNT(panstwo)  FROM panstwa_txt WHERE powierzchnia > (SELECT powierzchnia FROM panstwa_txt WHERE panstwo = 'Polska') UNION SELECT 'większych', COUNT(panstwo) FROM panstwa_txt WHERE powierzchnia < (SELECT powierzchnia FROM panstwa_txt WHERE panstwo = 'Polska')
