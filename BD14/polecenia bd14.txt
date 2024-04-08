@@ -1,0 +1,8 @@
+1. Czy są użytkownicy o tym samym username?
+2. Ile razy powtarza się każdy first_name?
+3. Ile razy powtarza się każdy last_name?
+4. Ile jest kobiegt a ile męższyzn?
+5. Czy są osoby o tym samym haśle?
+
+Dodatkowe
+Rozkodować jedno hasło - PHP
